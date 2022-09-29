@@ -1,1 +1,1 @@
-from ._deque import ArrayDeque
+from ._array_deque import ArrayDeque
