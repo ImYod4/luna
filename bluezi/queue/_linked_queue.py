@@ -43,7 +43,7 @@ class LinkedQueue:
                 output += str(e._element) + ']'
             else:
                 output += str(e._element) + ', '
-            e = e._name
+            e = e._next
         return output
     def __repr__(self):
         output = self._name + '(['
@@ -55,5 +55,5 @@ class LinkedQueue:
                 output += str(e._element) + '])'
             else:
                 output += str(e._element) + ', '
-            e = e._name
+            e = e._next
         return output
