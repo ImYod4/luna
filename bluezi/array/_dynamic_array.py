@@ -1,4 +1,5 @@
 import ctypes
+import sys
 
 class DynamicArray:
     def __init__(self):
@@ -22,6 +23,8 @@ class DynamicArray:
         if not 0 <= k < self._length:
             raise IndexError('Index out of range!')
         self._data[k] = value
+    def __sizeof__(self):
+        return sys.getsizeof(self._data)
     def append(self, e):
         if 0 < self._length < (self._capacity // 4):
             self._resize(self._capacity // 2)
