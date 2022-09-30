@@ -30,6 +30,8 @@ class LinkedQueue:
         self._length -= 1
         return answer
     def first(self):
+        if self._is_empty():
+            raise _Empty('queue is empty')
         return self._head._element
     def _is_empty(self):
         return self._length == 0
