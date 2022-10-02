@@ -1,4 +1,4 @@
-class _DequeBase:
+class _LinkedDequeBase:
     def __init__(self):
         self._length = 0
         self._header = self._Node(None, None, None)
