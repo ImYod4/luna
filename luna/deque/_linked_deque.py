@@ -1,4 +1,4 @@
-from ._linked_deque_base import LinkedDequeBase
+from ._linked_deque_base import _LinkedDequeBase
 
 class _Empty(Exception):
     pass
