@@ -3,12 +3,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pybluezi"
+name = "luna"
 version = "0.9.1"
 authors = [
 	{name="Yoda", email="im.yod4@gmail.com"}
 ]
-description = "An educational collection-like package"
+description = "An educational library for datastructure and algorithms"
 readme = "README.md"
 require-python = ">3.1"
 classifires = [
