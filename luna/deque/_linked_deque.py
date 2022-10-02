@@ -31,8 +31,8 @@ class LinkedDeque:
             e = e._next
         return output
     def __repr__(self):
-        output = self.__class.__name__ + '(['
-        if self._is_empty():
+        output = 'LinkedDeque(['
+        if self.is_empty():
             return output + '])'
         e = self._header._next
         for i in range(self._length):

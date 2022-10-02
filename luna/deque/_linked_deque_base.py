@@ -14,7 +14,7 @@ class _LinkedDequeBase:
 
     def __len__(self):
         return self._length
-    def _is_empty(self):
+    def is_empty(self):
         return self._length == 0
     def _insert_between(self, e, left_node, right_node):
         newest = self._Node(e, None, None)
