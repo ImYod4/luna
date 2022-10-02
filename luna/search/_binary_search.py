@@ -1,6 +1,6 @@
 # binary_search.py
 
-def binary_search(S, start, end, key):
+def binary_search(S, start, end, *, key):
     mid = (start + end) // 2
     if end < start:
         return 'Not Found!'
