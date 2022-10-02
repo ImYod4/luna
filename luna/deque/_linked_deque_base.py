@@ -22,11 +22,11 @@ class _LinkedDequeBase:
         newest._next = right_node
         left_node._next = newest
         right_node._prev = newest
-        self._size += 1
+        self._length += 1
     def _delete_node(self, node):
         left_node = node._prev
         right_node = node._next
         left_node._next = right_node
         right_node._prev = left_node
-        self._size -= 1
+        self._length -= 1
         return node._element
