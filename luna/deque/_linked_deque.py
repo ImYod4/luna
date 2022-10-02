@@ -3,7 +3,7 @@ from ._linked_deque_base import _LinkedDequeBase
 class _Empty(Exception):
     pass
 
-class LinkedDeque:
+class LinkedDeque(_LinkedDequeBase):
     def first(self):
         if self._is_empty():
             raise _Empty('deque is empty')
