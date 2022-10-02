@@ -8,7 +8,7 @@ def binary_search(S, start, end, *, key):
         return mid
     else:
         if key < S[mid]:
-            return binary_search(S, start, mid - 1, key)
+            return binary_search(S, start, mid - 1, key=key)
         else:
-            return binary_search(S, mid + 1, end, key)
+            return binary_search(S, mid + 1, end, key=key)
 
