@@ -38,6 +38,9 @@ class CircularLinkedQueue:
             self._tail._next = oldhead._next
         self._length -= 1
         return oldhead._element
+    def rotate(self):
+        if not self._is_empty():
+            self._tail = self._tail._next
     def __str__(self):
         output = '['
         if self._is_empty():
