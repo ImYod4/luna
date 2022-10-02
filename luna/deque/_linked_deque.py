@@ -18,3 +18,27 @@ class LinkedDeque:
     def delete_last(self):
         answer = self._delete_node(self._trailer._prev)
         return answer
+    def __str__(self):
+        output = '['
+        if self._is_empty():
+            return output + ']'
+        e = self._header._next
+        for i in range(self._length):
+            if i == self._length - 1:
+                output += str(e._element) + ']'
+            else:
+                output += str(e._element) + ', '
+            e = e._next
+        return output
+    def __repr__(self):
+        output = self.__class.__name__ + '(['
+        if self._is_empty():
+            return output + '])'
+        e = self._header._next
+        for i in range(self._length):
+            if i == self._length - 1:
+                output += str(e._element) + '])'
+            else:
+                output += str(e._element) + ', '
+            e = e._next
+        return output
