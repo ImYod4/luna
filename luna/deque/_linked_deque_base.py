@@ -31,3 +31,27 @@ class _LinkedDequeBase:
         right_node._prev = left_node
         self._size -= 1
         return node._element
+    def __str__(self):
+        output = '['
+        if self._length == 0:
+            return output + ']'
+        e = self._header._next
+        for i in range(self._length):
+            if i == self._length - 1:
+                output += str(e._element) + ']'
+            else:
+                output += str(e._element) + ', '
+            e = e._next
+        return output
+    def __repr__(self):
+        output = self._name + '(['
+        if self._length == 0:
+            return output + '])'
+        e = self._header._next
+        for i in range(self._length):
+            if i == self._length - 1:
+                output += str(e._element) + '])'
+            else:
+                output += str(e._element) + ', '
+            e = e._next
+        return output
