@@ -13,7 +13,7 @@ class PositionalList(_LinkedDequeBase):
         def __ne__(self, other):
             return not (self == other)
     def _validate(self, p):
-        if not isinstance(p, self._Positon):
+        if not isinstance(p, self._Position):
             raise TypeError('p must be proper position type')
         if p._container is not self:
             raise ValueError('p does not belong to this container')
