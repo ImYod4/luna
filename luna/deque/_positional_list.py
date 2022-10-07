@@ -36,11 +36,9 @@ class PositionalList(_LinkedDequeBase):
         return self._Position(self, node)
     def _insert_between(self, e, left_node, right_node):
         super()._insert_between(e, left_node, right_node)
-    def add_first(self, p, e):
-        node = self._validate(p)
+    def add_first(self, e):
         self._insert_between(e, self._header, self._header._next)
-    def add_last(self, p, e):
-        node = self._validate(p)
+    def add_last(self, e):
         self._insert_between(e, self._trailer._prev, self._trailer)
     def add_before(self, p, e):
         node = self._validate(p)
