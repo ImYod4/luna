@@ -21,30 +21,43 @@ class PositionalList(_LinkedDequeBase):
             raise ValueError('p is no longer valid')
         return p._node
     def first(self):
-        pass
+        return self._make_position(self._header._next)
     def last(self):
-        pass
+        return self._make_position(self._trailer._prev)
     def before(self, p):
-        pass
+        node = self._validate(p)
+        return self._make_position(node._prev)
     def after(self, p):
-        pass
+        node = self._validate(p)
+        return self._make_position(node._next)
+    def _make_position(self, node):
+        if node is self._header or node is self._trailer:
+            return None
+        return self._Position(self, node)
     def _insert_between(self, e, left_node, right_node):
-        pass
+        super()._insert_between(e, left_node, right_node)
     def add_first(self, p, e):
-        pass
+        node = self._validate(p)
+        self._insert_between(e, self._header, self._header._next)
     def add_last(self, p, e):
-        pass
+        node = self._validate(p)
+        self._insert_between(e, self._trailer._prev, self._trailer)
     def add_before(self, p, e):
-        pass
+        node = self._validate(p)
+        self._insert_between(e, node._prev, node)
     def add_after(self, p, e):
-        pass
+        node = self._validate(p)
+        self._insert_between(e, node, node._next)
     def delete(self, p):
-        pass
+        node = self._validate(p)
+        self._delete_node(node)
     def replace(self, p, e):
-        pass
+        original = self._validate(p)
+        old_value = original._element
+        old_value._element = e
+        return old_value
     def __iter__(self):
-        pass
-    def __str__(self):
-        pass
-    def __repr__(self):
-        pass
+        cursor = self.first()
+        while cursor is not None:
+            yield cursor.element()
+            cursor = self.after(cursor)
