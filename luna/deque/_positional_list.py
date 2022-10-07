@@ -61,3 +61,17 @@ class PositionalList(_LinkedDequeBase):
         while cursor is not None:
             yield cursor.element()
             cursor = self.after(cursor)
+    def __str__(self):
+        output = '('
+        if self.is_empty():
+            return output + ')'
+        cursor = self.first()
+        while cursor is not None:
+            if self.after(cursor) is None:
+                output += str(cursor.element()) + ')'
+            else:
+                output += str(cursor.element()) + ' -> '
+            cursor = self.after(cursor)
+        return output
+    def __repr__(self):
+        return str(self)
