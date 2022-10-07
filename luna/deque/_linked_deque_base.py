@@ -30,4 +30,5 @@ class _LinkedDequeBase:
         left_node._next = right_node
         right_node._prev = left_node
         self._length -= 1
+        node = node._next = node._prev = node._element = None
         return node._element
