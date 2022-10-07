@@ -54,6 +54,12 @@ class PositionalList(_LinkedDequeBase):
         old_value = original._element
         old_value._element = e
         return old_value
+    def delete_first(self):
+        first_p = self.first()
+        self.delete(first_p)
+    def delete_last(self):
+        last_p = self.last()
+        self.delete(last_p)
     def __iter__(self):
         cursor = self.first()
         while cursor is not None:
