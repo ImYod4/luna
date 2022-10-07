@@ -1,6 +1,6 @@
-from ._linked_deque_base import LinkedDequeBase
+from ._linked_deque_base import _LinkedDequeBase
 
-class PositionalList(LinkedDequeBase):
+class PositionalList(_LinkedDequeBase):
 
     class _Position:
         def __init__(self, container, node):
