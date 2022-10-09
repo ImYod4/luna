@@ -60,6 +60,21 @@ class PositionalList(_LinkedDequeBase):
     def delete_last(self):
         last_p = self.last()
         self.delete(last_p)
+    def sort(self):
+        # insertion sort
+        if len(self) > 1:
+            marker = self.first()
+            while marker != self.last():
+                pivot = self.after(marker)
+                value = pivot.element()
+                if value > marker.element():
+                    marker = pivot
+                else:
+                    walk = marker
+                    while walk != self.first() and self.before(walk).element() > value:
+                        walk = self.before(walk)
+                    self.delete(pivot)
+                    self.add_before(walk, value)
     def __iter__(self):
         cursor = self.first()
         while cursor is not None:
