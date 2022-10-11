@@ -1,6 +1,6 @@
 import luna.stack import ArrayStack
 
-def is_matched(exp):
+def is_matched_parentheses(exp):
     leftly = '([{'
     rightly = ')]}'
     S = ArrayStack()
