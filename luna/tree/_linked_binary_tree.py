@@ -98,3 +98,19 @@ class LinkedBinaryTree(BinaryTreeBase):
         node._parent = node
         return node._element
     def _attach(self, p, T1, T2):
+        node = self._validate(p)
+        if not self.is_leaf(p):
+            raise ValueError('p is not a leaf position')
+        if not type(self) is type(T1) is type(T2):
+            raise TypeError('tree types must match')
+        self._size += len(T1) + len(T2)
+        if not T1.is_empty():
+            T1._root._parent = node
+            node._left = T1._root
+            T1._root = None
+            T1._size = 0
+        if not T2.is_empty():
+            T2._root._parent = node
+            node._right = T2._root
+            T2._root = None
+            T2._size = 0
