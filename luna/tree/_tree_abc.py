@@ -17,7 +17,7 @@ class Tree:
     def num_childern(self, p):
         raise NotImplementedError('must be implemented by subclass')
     def is_leaf(self, p):
-        raise NotImplementedError('must be implemented by subclass')
+        return self.num_childern(p) == 0
     def positions(self):
         raise NotImplementedError('must be implemented by subclass')
     def is_empty(self):
