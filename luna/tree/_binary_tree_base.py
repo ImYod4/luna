@@ -19,3 +19,19 @@ class BinaryTreeBase(Tree):
             yield self.left(p)
         if self.right(p) is not None:
             yield self.right(p)
+    def positions(self):
+        return self.inorder()
+    def inorder(self):
+        if not self.is_empty():
+            for p in self._subtree_inorder(self.root()):
+                yield p
+    def _subtree_inorder(self, p):
+        if not self.left(p) is None:
+            for child in self.children(p):
+                for other in self._subtree_inorder(child):
+                    yield other
+        yield p
+        if not self.right(p) is None:
+            for child in self.children(p):
+                for other in self._subtree_inorder(child):
+                    yield other
