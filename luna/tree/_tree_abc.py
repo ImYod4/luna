@@ -1,3 +1,5 @@
+from ..queue._linked_queue import LinkedQueue
+
 class Tree:
     class Position:
         def element(self):
@@ -61,7 +63,13 @@ class Tree:
             for other in self._subtree_postorder(child):
                 yield other
         yield p
-    def inorder(self):
-        raise NotImplementedError('must be implemented by subclass')
     def breadth_first(self):
-        raise NotImplementedError('must be implemented by subclass')
+        if not self.is_empty():
+            queue = LinkedQueue()
+            queue.enqueue(self.root())
+            while not queue._is_empty():
+                p = queue.dequeue()
+                yield p
+                for child in self.childern(p):
+                    q.enqueue(child) 
+
