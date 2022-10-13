@@ -44,9 +44,23 @@ class Tree:
             p = self.root()
         return self._height2(p)
     def preorder(self):
-        raise NotImplementedError('must be implemented by subclass')
+        if not self.is_empty():
+            for p in self._subtree_preorder(self.root()):
+                yield p
+    def _subtree_preorder(self, p):
+        yield p
+        for child in self.childern(p):
+            for other in self._subtree_preorder(child):
+                yield other
     def postorder(self):
-        raise NotImplementedError('must be implemented by subclass')
+        if not self.is_empty():
+            for p in self._subtree_postorder(self.root()):
+                yield p
+    def _subtree_postorder(self, p):
+        for child in self.childern(p):
+            for other in self._subtree_postorder(child):
+                yield other
+        yield p
     def inorder(self):
         raise NotImplementedError('must be implemented by subclass')
     def breadth_first(self):
