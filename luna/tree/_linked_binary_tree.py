@@ -45,7 +45,7 @@ class LinkedBinaryTree(BinaryTreeBase):
             count += 1
         return count
     def root(self):
-        return self._make_position(None if not self._root else self._root._node)
+        return self._make_position(None if not self._root else self._root)
     def left(self, p):
         node = self._validate(p)
         return self._make_position(node._left)
