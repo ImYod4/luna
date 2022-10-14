@@ -27,11 +27,11 @@ class BinaryTreeBase(Tree):
                 yield p
     def _subtree_inorder(self, p):
         if not self.left(p) is None:
-            for child in self.children(p):
-                for other in self._subtree_inorder(child):
-                    yield other
+            for other in self._subtree_inorder(self.left(p)):
+                yield other
         yield p
+        
         if not self.right(p) is None:
-            for child in self.children(p):
-                for other in self._subtree_inorder(child):
-                    yield other
+            for other in self._subtree_inorder(self.right(p)):
+                yield other
+
