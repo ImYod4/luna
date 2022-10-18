@@ -22,31 +22,65 @@ Advantages of luna:
 ## Stack
 ### Stack with array
 ```python
-from luna.stack import ArrayStack
-
-stack = ArrayStack()
-
-print(stack)
-
-for i in range(10):
-	stack.push(i)
-
-print(stack)
-
-print(stack.pop())
+>>> from luna.stack import ArrayStack
+>>> stack = ArrayStack()
+>>> for i in range(10):
+...     stack.push(i)
+... 
+>>> stack
+ArrayStack([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+>>> stack.pop()
+9
 ```
 ### Stack with linked list
 ```python
-from luna.stack import LinkedStack
-
-stack = LinkedStack()
-
-print(stack)
-
-for i in range(10):
-	stack.push(i)
-
-print(stack)
-
-print(stack.pop())
+>>> from luna.stack import LinkedStack
+>>> stack = LinkedStack()
+>>> for i in range(10):
+...     stack.push(i)
+... 
+>>> stack
+LinkedStack([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+>>> stack.pop()
+9
+```
+## Queue
+### Queue with array
+```python
+>>> from luna.queue import ArrayQueue
+>>> queue = ArrayQueue()
+>>> queue
+ArrayQueue([])
+>>> for i in range(10):
+...     queue.enqueue(i)
+... 
+>>> queue
+ArrayQueue([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+>>> queue.dequeue()
+0
+```
+### Queue with linked list
+```python
+>>> from luna.queue import LinkedQueue
+>>> queue = LinkedQueue()
+>>> queue
+LinkedQueue([])
+>>> for i in range(10):
+...     queue.enqueue(i)
+... 
+>>> queue
+LinkedQueue([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+>>> queue.dequeue()
+0
+```
+## Deque
+### Deque with array
+```python
+```
+### Deque with linked list
+```python
+```
+## Circular Queue
+### Circular Queue with linked list
+```python
 ```
