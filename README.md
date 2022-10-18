@@ -19,6 +19,29 @@ Advantages of luna:
 5. run `pip3 install dist/<version>.tar.gz`
 
 # Examples
+## Array
+### Dynamic Array
+```python
+>>> from luna.array import DynamicArray
+>>> array = DynamicArray()
+>>> array
+DynamicArray([])
+>>> for i in range(10):
+...     array.append(i)
+... 
+>>> array
+DynamicArray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+>>> array.remove(5)
+>>> array
+DynamicArray([0, 1, 2, 3, 4, 6, 7, 8, 9])
+>>> array.index(8)
+7
+>>> len(array)
+9
+>>> array.extend([10, 11])
+>>> array
+DynamicArray([0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11])
+```
 ## Stack
 ### Stack with array
 ```python
@@ -73,6 +96,9 @@ LinkedQueue([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 >>> queue.dequeue()
 0
 ```
+### Circular Queue with linked list
+```python
+```
 ## Deque
 ### Deque with array
 ```python
@@ -80,7 +106,10 @@ LinkedQueue([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 ### Deque with linked list
 ```python
 ```
-## Circular Queue
-### Circular Queue with linked list
+### Positional List
+```python
+```
+## Tree
+### Binary Tree with linked list
 ```python
 ```
