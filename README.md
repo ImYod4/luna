@@ -21,7 +21,7 @@ Advantages of luna:
 # Examples
 ## Stack
 ### Stack with array
-```
+```python
 from luna.stack import ArrayStack
 
 stack = ArrayStack()
@@ -36,7 +36,7 @@ print(stack)
 print(stack.pop())
 ```
 ### Stack with linked list
-```
+```python
 from luna.stack import LinkedStack
 
 stack = LinkedStack()
