@@ -36,7 +36,7 @@ class LinkedBinaryTree(BinaryTreeBase):
     def parent(self, p):
         node = self._validate(p)
         return self._make_position(node._parent)
-    def num_childern(self, p):
+    def num_children(self, p):
         node = self._validate(p)
         count = 0
         if node._left:
@@ -79,7 +79,7 @@ class LinkedBinaryTree(BinaryTreeBase):
         return old_value
     def delete(self, p):
         node = self._validate(p)
-        if self.num_childern(p) == 2:
+        if self.num_children(p) == 2:
             raise ValueError('p has two children')
         child = node._left if node._left else node._right
         if not child is None:

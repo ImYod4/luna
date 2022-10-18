@@ -14,12 +14,12 @@ class Tree:
         return self.root() == p
     def parent(self, p):
         raise NotImplementedError('must be implemented by subclass')
-    def childern(self, p):
+    def children(self, p):
         raise NotImplementedError('must be implemented by subclass')
-    def num_childern(self, p):
+    def num_children(self, p):
         raise NotImplementedError('must be implemented by subclass')
     def is_leaf(self, p):
-        return self.num_childern(p) == 0
+        return self.num_children(p) == 0
     def positions(self):
         raise NotImplementedError('must be implemented by subclass')
     def is_empty(self):
@@ -40,7 +40,7 @@ class Tree:
         if self.is_leaf(p):
             return 0
         else:
-            return 1 + max(self._height2(c) for c in self.childern(p))
+            return 1 + max(self._height2(c) for c in self.children(p))
     def height(self, p=None):
         if p is None:
             p = self.root()
@@ -51,7 +51,7 @@ class Tree:
                 yield p
     def _subtree_preorder(self, p):
         yield p
-        for child in self.childern(p):
+        for child in self.children(p):
             for other in self._subtree_preorder(child):
                 yield other
     def postorder(self):
@@ -59,7 +59,7 @@ class Tree:
             for p in self._subtree_postorder(self.root()):
                 yield p
     def _subtree_postorder(self, p):
-        for child in self.childern(p):
+        for child in self.children(p):
             for other in self._subtree_postorder(child):
                 yield other
         yield p
@@ -70,6 +70,6 @@ class Tree:
             while not queue._is_empty():
                 p = queue.dequeue()
                 yield p
-                for child in self.childern(p):
+                for child in self.children(p):
                     q.enqueue(child) 
 
