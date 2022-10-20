@@ -14,7 +14,7 @@ class SortedPriorityQueue(PriorityQueueBase):
     def min(self):
         p = self._find_min()
         item = p.element()
-        return (item._ken, item._value)
+        return (item._key, item._value)
     def remove_min(self):
         p = self._find_min()
         item = p.element()
