@@ -31,3 +31,31 @@ class SortedPriorityQueue(PriorityQueueBase):
             self._data.add_after(walk, new)
     def __len__(self):
         return len(self._data)
+    def __str__(self):
+        output = '['
+        if self.is_empty():
+            return output + ']'
+        walk = self._data.first()
+        for i in range(len(self._data)):
+            if self._data.after(walk) is None:
+                item = walk.element()
+                output += str(f'{(item._key, item._value)}') + ']'
+            else:
+                item = walk.element()
+                output += str(f'{(item._key, item._value)}') + ', '
+            walk = self._data.after(walk)
+        return output
+    def __repr__(self):
+        output = 'S_PriorityQueue(['
+        if self.is_empty():
+            return output + '])'
+        walk = self._data.first()
+        for i in range(len(self._data)):
+            if self._data.after(walk) is None:
+                item = walk.element()
+                output += str(f'{(item._key, item._value)}') + '])'
+            else:
+                item = walk.element()
+                output += str(f'{(item._key, item._value)}') + ', '
+            walk = self._data.after(walk)
+        return output
