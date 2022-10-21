@@ -1,6 +1,6 @@
-import luna.stack import ArrayStack
+from ..stack import ArrayStack
 
-def is_mathced_html(exp):
+def is_matched_html(exp):
     S = ArrayStack()
     j = exp.find('<')
     while j != -1:
