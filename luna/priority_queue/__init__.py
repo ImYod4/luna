@@ -1,2 +1,3 @@
 from ._unsorted_priority_queue import UnsortedPriorityQueue
 from ._sorted_priority_queue import SortedPriorityQueue
+from ._heap_priority_queue import HeapPriorityQueue
