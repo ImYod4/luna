@@ -7,11 +7,11 @@ class UnsortedMap(MapBase):
         return len(self._table)
     def __setitem__(self, k, v):
         for item in self._table:
-            if item._key == newest._key:
+            if item._key == k:
                 item._key = k
                 item._value = v
                 return
-        self._data.append(self._Item(k, v))
+        self._table.append(self._Item(k, v))
     def __getitem__(self, k):
         for item in self._table:
             if item._key == k:
@@ -26,3 +26,15 @@ class UnsortedMap(MapBase):
     def __iter__(self):
         for item in self._table:
             yield item._key
+    def __str__(self):
+        if len(self._table) == 0:
+            return '{}'
+        output = '{'
+        for i in range(len(self._table)):
+            if i == len(self._table) - 1:
+                output += repr(self._table[i]._key) + ': ' + str(self._table[i]._value) + '}'
+            else:
+                output += repr(self._table[i]._key) + ': ' + str(self._table[i]._value) + ', '
+        return output
+    def __repr__(self):
+        return str(self)
