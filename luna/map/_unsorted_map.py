@@ -37,4 +37,4 @@ class UnsortedMap(MapBase):
                 output += repr(self._table[i]._key) + ': ' + str(self._table[i]._value) + ', '
         return output
     def __repr__(self):
-        return str(self)
+        return repr(str(self))
