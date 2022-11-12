@@ -98,6 +98,17 @@ LinkedQueue([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 ```
 ### Circular Queue with linked list
 ```python
+>>> from luna.queue import CircularLinkedQueue
+>>> q = CircularLinkedQueue()
+>>> q
+CircularLinkedQueue([])
+>>> q.enqueue(1)
+>>> q.enqueue(2)
+>>> q
+CircularLinkedQueue([1, 2])
+>>> q.rotate()
+>>> q
+CircularLinkedQueue([2, 1])
 ```
 ## Deque
 ### Deque with array
