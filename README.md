@@ -18,4 +18,4 @@ Advantages of luna:
 4. run `python3 -m build`
 5. run `pip3 install dist/<version>.tar.gz`
 
-[examples/README.md]
+[Examples](examples/README.md)
